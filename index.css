@@ -1,0 +1,9 @@
+#main {
+	display: flex;
+	flex-direction: row;
+}
+
+#controls p {
+	display: flex;
+	flex-direction: row;
+}
