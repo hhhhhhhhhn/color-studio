@@ -33,3 +33,23 @@ for(let element of document.getElementsByTagName("input")) {
 		styleRoot.setProperty("--" + element.id, "#" + element.value)
 	})
 }
+
+// syntax highlightinh
+let css = ""
+for(let color of Object.keys(colors)) {
+	css += `#terminal .${color} {
+		color: var(--${color});
+	}\n`
+}
+css = `<style>${css}</style>`
+
+document.getElementsByTagName("link")[0].insertAdjacentHTML("afterend", css)
+
+
+let terminalElement = document.getElementById("terminal")
+
+// unfocus on Enter key
+document.addEventListener("keydown", (e) => {
+	if(e.key == "Enter")
+		e.target.blur()
+})
